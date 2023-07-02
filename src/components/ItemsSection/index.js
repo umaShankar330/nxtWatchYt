@@ -81,12 +81,13 @@ class ItemSection extends Component {
                   <ItemText isDark={isDark}>Gaming</ItemText>
                 </ItemsList>
               </Link>
+
 <<<<<<< HEAD
               <Link className="link" to="/saved-videos">
 =======
               <Link className="link" to="/savedVideos">
->>>>>>> 97d245ce7f3b89fa0118bc841b0c030dfb2cb7ae
-                <ItemsList
+>>>>>>> 97d245ce7f3b89fa0118bc841b0c030dfb2cb7ae       
+         <ItemsList
                   onClick={() => this.changeItem('3')}
                   isActive={activeSection === '3'}
                   key="3"
