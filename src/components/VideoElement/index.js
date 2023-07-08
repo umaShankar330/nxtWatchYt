@@ -163,18 +163,21 @@ class VideoElement extends Component {
           <LikesContainer isDark={isDark}>
             <IconItem>
               <AiOutlineLike />
+              Like
             </IconItem>
             <IconItem>
               <AiOutlineDislike />
+              Dislike
             </IconItem>
-            <SavedIcon isAdded={isAdded}>
+            <SavedIcon isAdded={isPresent}>
               <RiPlayListAddLine onClick={toggleSavedVideo} />
+              Saved
             </SavedIcon>
           </LikesContainer>
         </CountLikeContainer>
         <Line />
         <ChannelContainer>
-          <ChannelImg src={profileImageUrl} alt="profileImageUrl" />
+          <ChannelImg src={profileImageUrl} alt="profile_image_ur" />
           <ChannelInfo>
             <ChannelName>{name}</ChannelName>
             <ChannelText>{subscriberCount} Subscribers</ChannelText>
@@ -192,7 +195,11 @@ class VideoElement extends Component {
         {value => {
           const {isDark} = value
           return (
-            <MainContainer apiStatus={apiStatus} isDark={isDark}>
+            <MainContainer
+              data-testid="videoItemDetails"
+              apiStatus={apiStatus}
+              isDark={isDark}
+            >
               {apiStatus === 'LOADING' && this.renderLoading()}
               {apiStatus === 'FAILURE' && this.renderFailure(isDark)}
               {apiStatus === 'SUCCESS' && this.renderVideoPlayer(value)}

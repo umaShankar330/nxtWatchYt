@@ -13,14 +13,18 @@ export const MainContainer = styled.div`
       : 'flex-start'};
   min-height: 90vh;
   padding: 20px;
-  background-color: ${props => (props.isDark ? 'black' : '#f1f5f9')};
+  width: 100%;
+  background-color: ${props => (props.isDark ? '#181818' : '#f1f5f9')};
 `
 export const VideosContainer = styled.ul`
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
   margin: 0;
   padding: 0;
+  width: 100%;
 `
 export const SearchContainer = styled.div`
   display: flex;
@@ -32,8 +36,9 @@ export const SearchContainer = styled.div`
 export const SearchItem = styled.input`
   outline: none;
   line-height: 1.8;
-  width: 20%;
-
+  @media screen and (min-width: 768px) {
+    width: 25%;
+  }
   border: 2px solid #909090;
   border-right: none;
   padding: 0px 10px;

@@ -19,6 +19,7 @@ import {
   MiddleCont,
   LeftContainer,
   HomeCont,
+  Footer,
 } from './styledComponents'
 // Replace your code here
 class App extends Component {
@@ -41,7 +42,9 @@ class App extends Component {
   deleteVideo = videoItem => {
     // console.log('triggered delete')
     const {videosList} = this.state
-    const UpdatedList = videosList.filter(eachItem => eachItem !== videoItem)
+    const UpdatedList = videosList.filter(
+      eachItem => eachItem.id !== videoItem.id,
+    )
     this.setState({videosList: [...UpdatedList]})
   }
 
@@ -95,6 +98,9 @@ class App extends Component {
                   </Switch>
                 </HomeCont>
               </MiddleCont>
+              <Footer>
+                <ContactUsSection />
+              </Footer>
             </AppContainer>
           </Switch>
         </SavedContext.Provider>

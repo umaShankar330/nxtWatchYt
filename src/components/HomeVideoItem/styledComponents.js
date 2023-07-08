@@ -4,10 +4,19 @@ export const MainContainer = styled.li`
   display: flex;
   flex-direction: column;
   font-family: 'Roboto';
-  width: 270px;
+  width: 25vw;
   align-items: flex-start;
-  margin-right: 20px;
   margin-bottom: 10px;
+  @media screen and (max-width: 1050px) {
+    width: 35vw;
+  }
+  @media screen and (max-width: 768px) {
+    align-items: flex-start;
+    width: 40vw;
+  }
+  @media screen and (max-width: 568px) {
+    width: 100%;
+  }
 `
 export const VideoBtn = styled.button`
   display: flex;
@@ -20,8 +29,7 @@ export const VideoBtn = styled.button`
   background-color: transparent;
 `
 export const VideoImage = styled.img`
-  height: 165px;
-  width: 270px;
+  width: 100%;
 `
 export const ContentContainer = styled.div`
   display: flex;

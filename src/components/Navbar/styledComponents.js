@@ -1,5 +1,10 @@
 import styled from 'styled-components'
 
+export const NavSectionContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
 export const NavBarContainer = styled.nav`
   display: flex;
   align-items: center;
@@ -50,16 +55,27 @@ export const ProfileIcon = styled.img`
 export const ExitIcon = styled.button`
   border: none;
   background-color: transparent;
-  color: white;
+  color: black;
   outline: none;
   font-size: 23px;
   display: flex;
   align-items: center;
+
   @media screen and (min-width: 768px) {
     display: none;
   }
 `
+export const ExitBtn = styled.button`
+  border: none;
+  outline: none;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+`
 
+export const DisplaySection = styled.div`
+  display: ${props => (props.isCollapse ? null : 'none')};
+`
 export const LogoutBtn = styled.button`
   height: 30px;
   width: 100px;

@@ -32,7 +32,8 @@ class SavedVideos extends Component {
   )
 
   renderSavedVideos = (savedList, isDark) => (
-    <MainContainer isDark={isDark}>
+    <MainContainer data-testid="savedVideos" isDark={isDark}>
+      <h1>Saved Videos</h1>
       <SavedListContainer isDark={isDark}>
         {savedList.map(eachItem => (
           <SavedItem key={eachItem.id} details={eachItem} />

@@ -15,7 +15,7 @@ export const MainContainer = styled.div`
       ? 'center'
       : 'flex-start'};
   min-height: 90vh;
-  background-color: ${props => (props.isDark ? 'black' : '#f1f5f9')};
+  background-color: ${props => (props.isDark ? '#0f0f0f' : '#f1f5f9')};
 `
 export const VideoPlayer = styled.div`
   display: flex;
@@ -49,9 +49,12 @@ export const CountText = styled.p`
 export const LikesContainer = styled.div`
   display: flex;
 `
-export const IconItem = styled.p`
+export const IconItem = styled.button`
   margin-right: 10px;
   font-size: 18px;
+  background-color: none;
+  outline: none;
+  border: none;
 `
 export const SavedIcon = styled.p`
   margin-right: 10px;

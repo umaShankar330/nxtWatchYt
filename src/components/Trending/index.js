@@ -113,7 +113,11 @@ class Trending extends Component {
         {value => {
           const {isDark} = value
           return (
-            <MainContainer apiStatus={apiStatus} isDark={isDark}>
+            <MainContainer
+              data-testid="trending"
+              apiStatus={apiStatus}
+              isDark={isDark}
+            >
               {apiStatus === 'LOADING' && this.renderLoading()}
               {apiStatus === 'FAILURE' && this.renderFailure(isDark)}
               {apiStatus === 'SUCCESS' && this.renderVideo(isDark)}

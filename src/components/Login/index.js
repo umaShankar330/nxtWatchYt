@@ -1,5 +1,5 @@
 import {Component} from 'react'
-// import {Redirect} from 'react-router-dom'
+import {Redirect} from 'react-router-dom'
 import Cookies from 'js-cookie'
 import {
   PageContainer,
@@ -12,7 +12,6 @@ import {
   LoginBtn,
   ShowPwdContainer,
   AlertMessage,
-  ShowPwdText,
 } from './styledComponents'
 import SavedContext from '../../Context'
 
@@ -26,11 +25,12 @@ class Login extends Component {
 
   triggerLogin = event => {
     event.preventDefault()
-    // const {username, password} = this.state
-    // if (username !== 'rahul' && password !== 'rahul@2021') {
-    //   this.setState({isLogin: false})
-    // } else {
-    this.getLoginDetails()
+    const {username, password} = this.state
+    if (username !== 'rahul' && password !== 'rahul@2021') {
+      this.setState({isLogin: false})
+    } else {
+      this.getLoginDetails()
+    }
   }
 
   getLoginDetails = async () => {
@@ -74,10 +74,10 @@ class Login extends Component {
 
   render() {
     const {username, password, isLogin, isPwd} = this.state
-    // const token = Cookies.get('jwt_token')
-    // if (token !== undefined) {
-    //   return <Redirect to="/" />
-    // }
+    const token = Cookies.get('jwt_token')
+    if (token !== undefined) {
+      return <Redirect to="/" />
+    }
     console.log(isLogin, password)
     return (
       <SavedContext.Consumer>
@@ -89,7 +89,7 @@ class Login extends Component {
                 <WebsiteLogo
                   isDark={isDark}
                   src="https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png"
-                  alt="website-logo"
+                  alt="website logo"
                 />
                 <FormContainer onSubmit={this.triggerLogin}>
                   <LabelContainer>
@@ -118,7 +118,7 @@ class Login extends Component {
                       type="checkbox"
                       onClick={this.toggleShowPwd}
                     />
-                    <ShowPwdText htmlFor="showPwd">Show Password</ShowPwdText>
+                    <LabelText htmlFor="showPwd">Show Password</LabelText>
                   </ShowPwdContainer>
                   <LoginBtn type="submit">Login</LoginBtn>
                   {isLogin ? null : (

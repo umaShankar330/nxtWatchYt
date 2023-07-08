@@ -6,11 +6,12 @@ export const ItemsContainer = styled.ul`
   align-items: center;
   margin: 0;
   padding: 0;
-  padding-top: 20px;
-  //   @media screen and (min-width: 768px) {
-  //     width: 15%;
-  //   }
   width: 100%;
+
+  @media screen and (max-width: 768px) {
+    width: 100vw;
+    padding-left: 0;
+  }
 `
 export const ItemsList = styled.li`
   display: flex;
@@ -22,12 +23,24 @@ export const ItemsList = styled.li`
   background-color: ${props => {
     if (props.isActive) {
       if (props.isDark) {
-        return ' #313131'
+        return '#313131'
       }
-      return ' #cbd5e1'
+      return '#cbd5e1'
     }
     return 'transparent'
   }};
+
+  @media screen and (max-width: 768px) {
+    width: 100vw;
+    padding-left: 0;
+    text-align: center;
+    justify-content: center;
+    border-bottom: 1px solid #c1c2bc;
+    background-color: ${props => (props.isDark ? ' #313131' : ' #cbd5e1')};
+  }
+  @media screen and (max-width: 968px) {
+    padding-left: 5px;
+  }
 `
 export const ItemText = styled.p`
   color: ${props => (props.isDark ? 'white' : '#424242')};

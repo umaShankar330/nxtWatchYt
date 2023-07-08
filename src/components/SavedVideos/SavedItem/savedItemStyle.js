@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const MainContainer = styled.div`
+export const MainContainer = styled.li`
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -10,7 +10,9 @@ export const MainContainer = styled.div`
 `
 export const ImgElement = styled.img`
   height: 250px;
-  width: 350px;
+  width: 300px;
+  object-fit: contain;
+  object-position: top;
 `
 export const TextContainer = styled.div`
   display: flex;
@@ -18,7 +20,7 @@ export const TextContainer = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
 `
-export const VideoTitle = styled.h1`
+export const VideoTitle = styled.p`
   font-size: 19px;
   margin-left: 10px;
   margin-top: 6px;

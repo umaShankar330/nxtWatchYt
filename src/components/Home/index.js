@@ -141,7 +141,11 @@ class Home extends Component {
         {value => {
           const {isDark} = value
           return (
-            <MainContainer apiStatus={apiStatus} isDark={isDark}>
+            <MainContainer
+              data-testid="home"
+              apiStatus={apiStatus}
+              isDark={isDark}
+            >
               {apiStatus === 'LOADING' && this.renderLoading()}
               {apiStatus === 'FAILURE' && this.renderFailure(isDark)}
               {apiStatus === 'SUCCESS' && this.renderVideo()}

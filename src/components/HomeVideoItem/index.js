@@ -38,7 +38,7 @@ const HomeVideoItem = props => {
             <MainContainer isDark={isDark}>
               <VideoImage src={thumbnailUrl} alt="thumbnail url" />
               <ContentContainer>
-                <ProfileImg src={profileImageUrl} alt="profileImageUrl" />
+                <ProfileImg src={profileImageUrl} alt="profile" />
                 <TextContainer>
                   <VideoTitle isDark={isDark}>{title}</VideoTitle>
                   <ChannelName isDark={isDark}>{name}</ChannelName>

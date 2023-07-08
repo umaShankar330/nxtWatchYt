@@ -9,7 +9,7 @@ export const AppContainer = styled.div`
 export const MiddleCont = styled.div`
   display: flex;
   height: 100%;
-  min-height: 90vh;
+  max-height: 90vh;
   flex-direction: row;
   justify-content: space-between;
 `
@@ -20,11 +20,23 @@ export const LeftContainer = styled.div`
   width: 14vw;
   max-height: 90vh;
   background-color: ${props => (props.isDarkTheme ? '#212121' : 'transparent')};
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `
 //
 
 export const HomeCont = styled.div`
   width: 86vw;
-  max-height: 90vh;
+  min-height: 90vh;
   overflow-y: scroll;
+  @media screen and (max-width: 768px) {
+    width: 100vw;
+    display: flex;
+  }
+`
+export const Footer = styled.div`
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
 `

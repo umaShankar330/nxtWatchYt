@@ -32,12 +32,12 @@ const SavedItem = props => {
         return (
           <Link className="link" to={`/videos/${id}`}>
             <MainContainer key={id} isDark={isDark}>
-              <ImgElement src={thumbnailUrl} alt="thumbnailUrl" />
+              <ImgElement src={thumbnailUrl} alt="video thumbnail" />
               <TextContainer>
                 <VideoTitle isDark={isDark}>{title}</VideoTitle>
                 <ChannelName isDark={isDark}>{name}</ChannelName>
                 <CountContainer>
-                  <CountText isDark={isDark}>{viewCount} views</CountText>
+                  <CountText isDark={isDark}>{viewCount}</CountText>views
                   <BsDot />
                   <CountText isDark={isDark}>{publishedDiff}</CountText>
                 </CountContainer>

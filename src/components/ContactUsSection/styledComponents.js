@@ -8,6 +8,9 @@ export const SectionContainer = styled.div`
   padding-left: 10px;
   @media screen and (max-width: 768px) {
     align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-top: 1px solid grey;
   }
 
   margin: 0;

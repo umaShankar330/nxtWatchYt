@@ -30,7 +30,7 @@ const TrendingVideoItem = props => {
         return (
           <Link className="link" to={`/videos/${id}`}>
             <MainContainer isDark={isDark}>
-              <VideoImg src={thumbnailUrl} alt="thumbnailUrl" />
+              <VideoImg src={thumbnailUrl} alt="video thumbnail" />
               <TextContainer>
                 <VideoTitle isDark={isDark}>{title}</VideoTitle>
                 <VideoText isDark={isDark}>{name}</VideoText>

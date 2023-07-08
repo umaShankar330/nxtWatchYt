@@ -14,7 +14,11 @@ export const MainContainer = styled.div`
       : 'flex-start'};
   min-height: 90vh;
   width: 84vw;
-  background-color: ${props => (props.isDark ? 'black' : '#f1f5f9')};
+  background-color: ${props => (props.isDark ? '#0f0f0f' : '#f1f5f9')};
+  @media screen and (max-width: 768px) {
+    width: 100vw;
+    padding: 0px;
+  }
 `
 export const ItemList = styled.ul`
   display: flex;
@@ -23,12 +27,20 @@ export const ItemList = styled.ul`
   align-items: center;
   margin: 0;
   margin-top: 40px;
+  @media screen and (max-width: 580px) {
+    justify-content: center;
+    padding: 0px;
+    margin-top: 20px;
+  }
 `
 export const TopContainer = styled.div`
   display: flex;
   padding: 30px 50px;
   width: 100%;
   background-color: ${props => (props.isDark ? '#181818' : '#ebebeb')};
+  @media screen and (max-width: 580px) {
+    padding: 10px 23px;
+  }
 `
 export const IconContainer = styled.div`
   padding: 10px 15px;
@@ -38,10 +50,17 @@ export const IconContainer = styled.div`
   align-items: center;
   border-radius: 50%;
   background-color: ${props => (props.isDark ? '#000000' : '#bedbf7')};
+  @media screen and (max-width: 580px) {
+    font-size: 30px;
+    padding: 8px 12px;
+  }
 `
 export const IconText = styled.h1`
   margin-left: 15px;
   color: ${props => (props.isDark ? 'white' : '#000000')};
+  @media screen and (max-width: 580px) {
+    font-size: 20px;
+  }
 `
 export const FailureContainer = styled.div`
   display: flex;

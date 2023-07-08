@@ -73,7 +73,7 @@ export const LoginBtn = styled.button`
   height: 35px;
   border: none;
   border-radius: 10px;
-  color: white;
+  color: #ffffff;
   background-color: #3b82f6;
 `
 export const AlertMessage = styled.p`
