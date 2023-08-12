@@ -8,7 +8,7 @@ import Cookies from 'js-cookie'
 import {IoSunnyOutline, IoExitOutline} from 'react-icons/io5'
 import SavedContext from '../../Context'
 import ItemSection from '../ItemsSection'
-
+import './index.css'
 import {
   NavBarContainer,
   NavLogo,
@@ -93,16 +93,20 @@ class Navbar extends Component {
                     }
                   >
                     {close => (
-                      <PopupContainer>
-                        <div>
-                          <PopupText>
-                            Are you sure, you want to logout
-                          </PopupText>
+                      <PopupContainer className="pop-up-section">
+                        <div className="pop-card">
+                          <div>
+                            <PopupText>
+                              Are you sure, you want to logout?
+                            </PopupText>
+                          </div>
+                          <PopupBtnContainer>
+                            <CloseBtn onClick={() => close()}>Cancel</CloseBtn>
+                            <ConfirmBtn onClick={logoutUser}>
+                              Confirm
+                            </ConfirmBtn>
+                          </PopupBtnContainer>
                         </div>
-                        <PopupBtnContainer>
-                          <CloseBtn onClick={() => close()}>Cancel</CloseBtn>
-                          <ConfirmBtn onClick={logoutUser}>Confirm</ConfirmBtn>
-                        </PopupBtnContainer>
                       </PopupContainer>
                     )}
                   </Popup>

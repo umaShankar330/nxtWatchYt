@@ -2,6 +2,9 @@ import styled from 'styled-components'
 
 export const MainContainer = styled.li`
   display: flex;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
   justify-content: flex-start;
   align-items: flex-start;
   font-family: 'Roboto';
@@ -9,7 +12,7 @@ export const MainContainer = styled.li`
   margin-bottom: 50px;
 `
 export const ImgElement = styled.img`
-  height: 250px;
+  //   height: 250px;
   width: 300px;
   object-fit: contain;
   object-position: top;

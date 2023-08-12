@@ -30,12 +30,14 @@ export const HomeCont = styled.div`
   width: 86vw;
   min-height: 90vh;
   overflow-y: scroll;
+  background-color: ${props => (props.isDarkTheme ? '#212121' : 'transparent')};
   @media screen and (max-width: 768px) {
     width: 100vw;
     display: flex;
   }
 `
 export const Footer = styled.div`
+  overflow-y: scroll;
   @media screen and (min-width: 768px) {
     display: none;
   }

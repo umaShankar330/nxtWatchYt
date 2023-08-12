@@ -5,7 +5,7 @@ export const PageContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   max-width: 100vw;
   color: black;
 `
@@ -17,8 +17,14 @@ export const LoginCard = styled.div`
   width: 27%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 568px) {
     width: 90%;
+  }
+  @media screen and(min-width:768px) and (max-width: 968px) {
+    width: 75%;
+  }
+  @media screen and(min-width:968px) and (max-width: 1150px) {
+    width: 40%;
   }
 `
 export const WebsiteLogo = styled.img`

@@ -12,9 +12,10 @@ import {
   FailureTitle,
   FailureText,
   RetryBtn,
+  Footer,
 } from './styledComponents'
 import HomeVideoItem from '../HomeVideoItem'
-
+import ContactUsSection from '../ContactUsSection'
 import SavedContext from '../../Context'
 
 class Home extends Component {
@@ -130,6 +131,9 @@ class Home extends Component {
             ))}
           </VideosContainer>
         )}
+        <Footer>
+          <ContactUsSection />
+        </Footer>
       </>
     )
   }

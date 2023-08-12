@@ -2,6 +2,7 @@ import {Component} from 'react'
 import {HiFire} from 'react-icons/hi'
 import Loader from 'react-loader-spinner'
 import TrendingVideoItem from '../TrendingVideoItem'
+import ContactUsSection from '../ContactUsSection'
 import {
   MainContainer,
   ItemList,
@@ -13,6 +14,7 @@ import {
   FailureTitle,
   FailureText,
   RetryBtn,
+  Footer,
 } from './styledComponents'
 import SavedContext from '../../Context'
 
@@ -102,6 +104,9 @@ class Trending extends Component {
             <TrendingVideoItem details={each} key={each.id} />
           ))}
         </ItemList>
+        <Footer>
+          <ContactUsSection />
+        </Footer>
       </>
     )
   }

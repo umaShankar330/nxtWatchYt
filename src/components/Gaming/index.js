@@ -12,8 +12,10 @@ import {
   FailureTitle,
   FailureText,
   RetryBtn,
+  Footer,
 } from './styledComponent'
 import GamingVideoItem from '../GamingVideoItem'
+import ContactUsSection from '../ContactUsSection'
 import SavedContext from '../../Context'
 
 class Gaming extends Component {
@@ -96,6 +98,9 @@ class Gaming extends Component {
             <GamingVideoItem details={each} key={each.id} />
           ))}
         </ItemList>
+        <Footer>
+          <ContactUsSection />
+        </Footer>
       </>
     )
   }

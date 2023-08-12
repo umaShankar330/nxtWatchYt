@@ -60,7 +60,7 @@ export const ExitIcon = styled.button`
   font-size: 23px;
   display: flex;
   align-items: center;
-
+  color: ${props => (props.isDark ? 'white' : null)};
   @media screen and (min-width: 768px) {
     display: none;
   }
@@ -89,14 +89,10 @@ export const LogoutBtn = styled.button`
   }
 `
 export const PopupContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 20px 30px;
-  background-color: black;
+  //   background-color: black;
 `
 export const PopupText = styled.p`
-  color: white;
+  //   color: white;
 `
 export const PopupBtnContainer = styled.div`
   display: flex;
@@ -105,9 +101,11 @@ export const CloseBtn = styled.button`
   height: 30px;
   width: 100px;
   outline: none;
-  border: 1px solid white;
-  background-color: transparent;
+  border: none;
+  background-color: orange;
   color: white;
+  border-radius: 8px;
+  margin-right: 15px;
 `
 
 export const ConfirmBtn = styled.button`
@@ -116,5 +114,6 @@ export const ConfirmBtn = styled.button`
   outline: none;
   border: none;
   background-color: blue;
+  border-radius: 8px;
   color: white;
 `

@@ -19,7 +19,7 @@ import {
   MiddleCont,
   LeftContainer,
   HomeCont,
-  Footer,
+  //   Footer,
 } from './styledComponents'
 // Replace your code here
 class App extends Component {
@@ -54,7 +54,6 @@ class App extends Component {
 
   render() {
     const {videosList, isDarkTheme} = this.state
-    // console.log(videosList, 'app.js')
     return (
       <>
         <SavedContext.Provider
@@ -75,7 +74,7 @@ class App extends Component {
                   <ItemsSection />
                   <ContactUsSection />
                 </LeftContainer>
-                <HomeCont>
+                <HomeCont isDarkTheme={isDarkTheme}>
                   <Switch>
                     <ProtectedRoute exact path="/" component={Home} />
                     <ProtectedRoute
@@ -98,9 +97,6 @@ class App extends Component {
                   </Switch>
                 </HomeCont>
               </MiddleCont>
-              <Footer>
-                <ContactUsSection />
-              </Footer>
             </AppContainer>
           </Switch>
         </SavedContext.Provider>

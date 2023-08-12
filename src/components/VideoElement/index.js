@@ -6,6 +6,7 @@ import {BsDot} from 'react-icons/bs'
 import {AiOutlineLike, AiOutlineDislike} from 'react-icons/ai'
 import {RiPlayListAddLine} from 'react-icons/ri'
 import SavedContext from '../../Context'
+import './index.css'
 import {
   MainContainer,
   VideoPlayer,
@@ -28,10 +29,18 @@ import {
   FailureTitle,
   FailureText,
   RetryBtn,
+  ChannelDesc,
 } from './styledComponent'
 
 class VideoElement extends Component {
-  state = {videoInfo: {}, apiStatus: 'LOADING', isPlaying: true, isAdded: false}
+  state = {
+    videoInfo: {},
+    apiStatus: 'LOADING',
+    isPlaying: true,
+    isAdded: false,
+    isLiked: false,
+    isDisLiked: false,
+  }
 
   componentDidMount() {
     this.getAPiDetails()
@@ -111,7 +120,7 @@ class VideoElement extends Component {
   )
 
   renderVideoPlayer = value => {
-    const {videoInfo, isPlaying, isAdded} = this.state
+    const {videoInfo, isPlaying, isAdded, isDisLiked, isLiked} = this.state
     console.log(isAdded)
     const {
       videoUrl,
@@ -142,36 +151,60 @@ class VideoElement extends Component {
         this.setState({isAdded: true}, addVideos(videoInfo))
       }
     }
+
+    const toggleLike = () => {
+      this.setState(prevState => ({
+        isLiked: !prevState.isLiked,
+        isDisLiked: false,
+      }))
+    }
+
+    const toggleDisLike = () => {
+      this.setState(prevState => ({
+        isDisLiked: !prevState.isDisLiked,
+        isLiked: false,
+      }))
+    }
+
     return (
       <VideoContainer isDark={isDark}>
         <VideoPlayer onClick={this.onClickPlay}>
           <ReactPlayer
-            width="55vw"
-            height="65vh"
+            className="react-player"
             url={videoUrl}
             isplaying={isPlaying.toString()}
             controls={isPlaying}
+            width="100%"
+            height="100%"
           />
         </VideoPlayer>
         <VideoTitle isDark={isDark}>{title}</VideoTitle>
-        <CountLikeContainer>
+        <CountLikeContainer isDark={isDark}>
           <CountContainer isDark={isDark}>
-            <CountText isDark={isDark}>{viewCount}</CountText>
+            <CountText isDark={isDark}>{viewCount} views</CountText>
             <BsDot />
             <CountText isDark={isDark}>{publishedDiff}</CountText>
           </CountContainer>
           <LikesContainer isDark={isDark}>
-            <IconItem>
+            <IconItem value={isLiked} isDark={isDark} onClick={toggleLike}>
               <AiOutlineLike />
               Like
             </IconItem>
-            <IconItem>
+            <IconItem
+              isDark={isDark}
+              value={isDisLiked}
+              onClick={toggleDisLike}
+            >
               <AiOutlineDislike />
               Dislike
             </IconItem>
-            <SavedIcon isAdded={isPresent}>
-              <RiPlayListAddLine onClick={toggleSavedVideo} />
-              Saved
+            <SavedIcon
+              isDark={isDark}
+              onClick={toggleSavedVideo}
+              isAdded={isPresent}
+            >
+              <RiPlayListAddLine />
+              Save
             </SavedIcon>
           </LikesContainer>
         </CountLikeContainer>
@@ -179,9 +212,11 @@ class VideoElement extends Component {
         <ChannelContainer>
           <ChannelImg src={profileImageUrl} alt="profile_image_ur" />
           <ChannelInfo>
-            <ChannelName>{name}</ChannelName>
-            <ChannelText>{subscriberCount} Subscribers</ChannelText>
-            <ChannelText>{description}</ChannelText>
+            <ChannelName isDark={isDark}>{name}</ChannelName>
+            <ChannelText isDark={isDark}>
+              {subscriberCount} Subscribers
+            </ChannelText>
+            <ChannelDesc isDark={isDark}>{description}</ChannelDesc>
           </ChannelInfo>
         </ChannelContainer>
       </VideoContainer>

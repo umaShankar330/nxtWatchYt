@@ -3,7 +3,11 @@ import styled from 'styled-components'
 export const MainContainer = styled.div`
   display: flex;
   background-color: ${props => (props.isDark ? '#0f0f0f' : '#f1f5f9')};
+  height: 100%;
   min-height: 90vh;
+  overflow-y: scroll;
+  max-width: 100vw;
+  width: 100%;
   flex-direction: column;
 `
 export const NoSavedContainer = styled.div`
@@ -37,4 +41,9 @@ export const SavedListContainer = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+`
+export const SectionTitle = styled.h1`
+  font-size: 27px;
+  margin-left: 40px;
+  color: ${props => (props.isDark ? 'white' : '#383838')};
 `

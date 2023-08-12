@@ -6,6 +6,7 @@ import {
   NoSavedTitle,
   NoSavedText,
   SavedListContainer,
+  SectionTitle,
 } from './styledComponents'
 import SavedItem from './SavedItem/savedItem'
 import SavedContext from '../../Context'
@@ -33,7 +34,7 @@ class SavedVideos extends Component {
 
   renderSavedVideos = (savedList, isDark) => (
     <MainContainer data-testid="savedVideos" isDark={isDark}>
-      <h1>Saved Videos</h1>
+      <SectionTitle isDark={isDark}>Saved Videos</SectionTitle>
       <SavedListContainer isDark={isDark}>
         {savedList.map(eachItem => (
           <SavedItem key={eachItem.id} details={eachItem} />

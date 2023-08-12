@@ -91,3 +91,8 @@ export const RetryBtn = styled.button`
   border-radius: 2px;
   margin-top: 10px;
 `
+export const Footer = styled.div`
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+`
